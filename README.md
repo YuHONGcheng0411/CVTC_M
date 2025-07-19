@@ -13,8 +13,8 @@ This project develops a lightweight multimodal fusion model (CVTC-M) for the ear
 #### Method Description
 ##### Model Architecture
 CVTC-M employs the following core components:
-- **Scale-Adaptive Embedding (SAE)**: Processes input features with convolution kernels of varying scales (Equation 1: dimension allocation), large kernels capture context, small kernels focus on local details, with a dimension ratio of 2 for efficiency.
-- **LS-Transformer**: Integrates Dynamic Position Bias (DPB, Equation 4) and long-short attention, with long attention capturing macroscopic anatomical relationships and short attention focusing on local microstructures.
+- **Scale-Adaptive Embedding (SAE)**: Processes input features with convolution kernels of varying scales, large kernels capture context, small kernels focus on local details, with a dimension ratio of 2 for efficiency.
+- **LS-Transformer**: Integrates Dynamic Position Bias and long-short attention, with long attention capturing macroscopic anatomical relationships and short attention focusing on local microstructures.
 - **Feature Extraction**:
   - MRI data processed via LinkNet3D for skull segmentation, enhanced by MBIE (red channel slight sharpening, green channel CLAHE, blue channel high-pass filtering).
   - Protein and APOE data extracted using MLP with skip connections for gradient stability.
