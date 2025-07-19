@@ -45,8 +45,5 @@ Contributions are welcome via Issues or Pull Requests! Please refer to the [Cont
 #### License
 This project is released under the [MIT License](LICENSE).
 
-#### Acknowledgements
-This work is supported by the National Natural Science Foundation of China (31930022, 12131020, etc.) and various provincial and municipal funds, see the paper [References](#references) for details.
-
 #### References
 See the "References" section of the paper "CVTC-M: Multimodal Model for Alzheimer’s Early Diagnosis with Interaction Mechanism Insights" for details.
