@@ -22,6 +22,8 @@ CVTC-M employs the following core components:
 - **Multimodal Fusion**: Uses Cross Attention to integrate features from four modalities into a global semantic representation.
 - **Prediction Module**: Classification head predicts conversion types, regression head predicts conversion time, with logarithmic transformation to optimize large-scale training.
 
+![CVTC-M Architecture](images/model_architecture.png)
+
 ##### Implicit Time-Series Modeling
 The model selects individuals with data from at least two time points, using the final time-point label as a supervisory signal to implicitly encode disease dynamics, avoiding the high computational cost of traditional time-series models.
 
@@ -29,6 +31,46 @@ The model selects individuals with data from at least two time points, using the
 - **SNP-Protein/APOE Association**: Reduces SNP features via PCA, constructs interaction terms (SNP_PCA * Protein), evaluates with SVM and logistic regression, and ranks key combinations by composite scores.
 - **Brain Region-Transcriptome Association**: Identifies key genes via masking experiments, with 75.79% associations validated.
 - **PPI Network**: Constructs an APOE-CLU-HSP60-BRCA1 network using STRING, BioGRID, and IntAct databases, validated by single-cell RNA-seq data.
+
+#### Dataset Preparation
+The `make_dataset.py` script processes raw MRI data from the input folder and generates preprocessed images in the output folder.
+
+##### Usage
+Run the script from the project directory:
+```bash
+python make_dataset.py --input_dir ./Dataset --output_dir ./Output
+```
+- Arguments:
+  - `--input_dir`: Path to the input dataset folder (default: `./Dataset`).
+  - `--output_dir`: Path to the output folder for preprocessed images (default: `./Output`).
+
+##### Input Folder Structure
+The input folder should follow this structure:
+```
+Dataset
+├── 002_S_0295
+│   ├── Any_file
+│   │   ├── Detection_time
+│   │   │   ├── Scan_ID
+│   │   │   │   └── *.nii
+├── 002_S_0413
+│   ├── Any_file
+│   │   ├── Detection_time
+│   │   │   ├── Scan_ID
+│   │   │   │   └── *.nii
+├── ...
+```
+
+##### Output Folder Structure
+The output folder will contain preprocessed images in the following structure:
+```
+Output
+├── 002_S_0295{time}
+│   └── *.png
+├── 002_S_0413{time}
+│   └── *.png
+├── ...
+```
 
 #### Installation
 1. Ensure Python 3.12.4 or higher is installed.
