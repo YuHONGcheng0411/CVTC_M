@@ -22,7 +22,7 @@ CVTC-M employs the following core components:
 - **Multimodal Fusion**: Uses Cross Attention to integrate features from four modalities into a global semantic representation.
 - **Prediction Module**: Classification head predicts conversion types, regression head predicts conversion time, with logarithmic transformation to optimize large-scale training.
 
-![CVTC-M Architecture]([images/CVTC_M.png](https://github.com/YuHONGcheng0411/CVTC_M/blob/main/images/CVTC_M.png))
+<img src="https://github.com/YuHONGcheng0411/CVTC_M/blob/main/images/CVTC_M.png" width="200px">
 
 ##### Implicit Time-Series Modeling
 The model selects individuals with data from at least two time points, using the final time-point label as a supervisory signal to implicitly encode disease dynamics, avoiding the high computational cost of traditional time-series models.
