@@ -48,11 +48,11 @@ The model selects individuals with data from at least two time points, using the
 #### Usage
 1. Data Preparation: Place ADNI and NACC datasets in the `Associated` or `CVTC` folders, ensuring format compliance with the paper (MRI, SNP, APOE, protein data).
 2. Run the Model:
-   - Navigate to the CVTC directory and run the main script:
+   Navigate to the CVTC directory and run the main script:
      ```bash
-     python main.py --data_path ./CVTC --output_dir ./results
+   python main.py --data_path ./CVTC --output_dir ./results
      ```
-   - Arguments: `--data_path` is the input data path, `--output_dir` is the output results path.
+   Arguments: `--data_path` is the input data path, `--output_dir` is the output results path.
 3. Result Analysis: Outputs include conversion type predictions (accuracy, AUC) and conversion time predictions (MAE, etc.), detailed in the `results` folder.
 
 #### Data and Dependencies
@@ -64,9 +64,6 @@ Contributions are welcome via Issues or Pull Requests! Please refer to the [Cont
 
 #### License
 This project is released under the [MIT License](LICENSE).
-
-#### Acknowledgements
-This work is supported by the National Natural Science Foundation of China (31930022, 12131020, etc.) and various provincial and municipal funds, see the paper [References](#references) for details.
 
 #### References
 See the "References" section of the paper "CVTC-M: Multimodal Model for Alzheimer’s Early Diagnosis with Interaction Mechanism Insights" for details.
